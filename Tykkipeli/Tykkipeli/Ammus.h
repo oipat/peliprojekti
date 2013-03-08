@@ -14,8 +14,7 @@ public:
 	Ammus(double voima_x,double voima_y,int x,int y);
 	~Ammus(void);
 	
-	
-	
+
 	
 	
 };
