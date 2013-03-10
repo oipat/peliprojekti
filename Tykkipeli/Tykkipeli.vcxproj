@@ -10,6 +10,18 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Ammus.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\Testaus.h" />
+    <ClInclude Include="src\World.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Ammus.cpp" />
+    <ClCompile Include="src\stdafx.cpp" />
+    <ClCompile Include="src\Testaus.cpp" />
+    <ClCompile Include="src\World.cpp" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{80CF40BB-DD55-4BB6-B09E-18DC833EAFC2}</ProjectGuid>
     <RootNamespace>Tykkipeli</RootNamespace>
@@ -67,12 +79,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="Ammus.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Ammus.h" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
