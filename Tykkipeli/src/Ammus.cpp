@@ -12,8 +12,14 @@ Ammus::Ammus(double voima_x,double voima_y,int x,int y)
 	this->ppos_x=x;
 	this->pos_y=y;
 	this->ppos_y=y;
-
 }
+
+Ammus::Ammus() {
+}
+
+Ammus::~Ammus(void) {
+}
+
 void Ammus::nextX(long time)
 {
 	this->pos_x=(int)(ppos_x+voima_x*time/1000);

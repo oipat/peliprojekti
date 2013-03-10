@@ -11,16 +11,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Ammus.h" />
-    <ClInclude Include="src\stdafx.h" />
-    <ClInclude Include="src\Testaus.h" />
-    <ClInclude Include="src\World.h" />
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="SDLTest.cpp" />
     <ClCompile Include="src\Ammus.cpp" />
     <ClCompile Include="src\stdafx.cpp" />
     <ClCompile Include="src\Testaus.cpp" />
     <ClCompile Include="src\World.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Ammus.h" />
+    <ClInclude Include="src\stdafx.h" />
+    <ClInclude Include="src\Testaus.h" />
+    <ClInclude Include="src\World.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{80CF40BB-DD55-4BB6-B09E-18DC833EAFC2}</ProjectGuid>
@@ -51,8 +52,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>..\lib\SDL-1.2.15\include;$(IncludePath)</IncludePath>
-    <LibraryPath>..\lib\SDL-1.2.15\lib\x86\;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>lib\SDL-1.2.15\include\;$(IncludePath)</IncludePath>
+    <LibraryPath>lib\SDL-1.2.15\lib\x86\;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -63,7 +64,7 @@
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Windows</SubSystem>
+      <SubSystem>Console</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">

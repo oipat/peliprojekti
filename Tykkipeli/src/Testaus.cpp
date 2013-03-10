@@ -1,9 +1,17 @@
 #include "stdafx.h"
 #include "Ammus.h"
+#include "SDL.h"
 using namespace std;
 
-int main(void)
+
+int main(int argc, char* argv[])
 {
+	
+	 SDL_Surface* screen = NULL;
+	 //Start SDL
+	 SDL_Init(SDL_INIT_EVERYTHING);
+	 //Set up screen
+	 screen = SDL_SetVideoMode( 640, 480, 32, SDL_SWSURFACE );
 
 	Ammus *ammus= new Ammus(52.0,42.0,12,535);
 	cout << "voima x: " <<ammus->getVoima_x() <<endl;
@@ -20,6 +28,7 @@ int main(void)
 	ammus->nextY(10);
 	cout << "pos y 2: " <<ammus->getPos_y() <<endl;
 	cin.get();
+
 	return 0;
 }
 
