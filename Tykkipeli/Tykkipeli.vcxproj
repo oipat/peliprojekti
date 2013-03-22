@@ -12,11 +12,13 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ammus.cpp" />
+    <ClCompile Include="src\Piirto.cpp" />
     <ClCompile Include="src\stdafx.cpp" />
     <ClCompile Include="src\Testaus.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Piirto.h" />
     <ClInclude Include="src\Ammus.h" />
     <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\Testaus.h" />

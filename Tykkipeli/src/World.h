@@ -12,6 +12,7 @@ public:
 	std::vector<Ammus*> getAmmukset();
 	void destroyAmmus(Ammus*);
 	void luoAmmus(Ammus*);
+	void World::tulostaAmmukset();
 private:
 	std::vector<Ammus*> ammukset;
 };

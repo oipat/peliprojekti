@@ -1,5 +1,7 @@
 #include "World.h"
 
+#include <iostream>
+
 
 World::World(void)
 {
@@ -23,7 +25,7 @@ void World::luoAmmus(Ammus *uusiAmmus) {
 void World::destroyAmmus(Ammus *tuhottavaAmmus) {
 	std::vector<Ammus*>::iterator iter;
 	
-	// TODO: test
+	// testattu
 	// iteroi ammuslista
 	for(iter = ammukset.begin(); iter != ammukset.end(); iter++) {
 		// jos tuhottavan ammuksen muistiosoite täsmää vektorissa olevaan
@@ -33,5 +35,15 @@ void World::destroyAmmus(Ammus *tuhottavaAmmus) {
 			// tuhotaan myös itse olio
 			delete tuhottavaAmmus;
 		}
+	}
+}
+
+void World::tulostaAmmukset() {
+	std::vector<Ammus*>::iterator iter;
+	
+	for(iter = this->ammukset.begin(); iter != this->ammukset.end(); iter++) {
+		std::cout << "x: " << ((Ammus*) *iter)->getPos_x();
+		std::cout << "\ty: " << ((Ammus*) *iter)->getPos_y();
+		std::cout << std::endl;
 	}
 }
