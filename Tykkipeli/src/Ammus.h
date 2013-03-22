@@ -4,14 +4,14 @@ class Ammus
 {
 			
 private:
-	//double paino;
+	double koko;
     double voima_x;
     double voima_y;
     double voima_g;
     int pos_x, pos_y, ppos_x, ppos_y;
 	
 public:
-	Ammus(double voima_x,double voima_y,int x,int y);
+	Ammus(double koko,double voima_x,double voima_y,int x,int y);
 	Ammus();
 	~Ammus(void);
 	void setVoima_x(double v) {voima_x=v;}
@@ -27,7 +27,7 @@ public:
 	void nextX(long time);
 	void nextY(long time);
 	void stop();
-	
+	bool collides(Ammus *other);
 	
 	
 	
