@@ -12,7 +12,7 @@ int main(int argc, char* argv[])
 	 SDL_Init(SDL_INIT_EVERYTHING);
 	 //Set up screen
 	 screen = SDL_SetVideoMode( 640, 480, 32, SDL_SWSURFACE );
-
+	/* 
 	Ammus *ammus= new Ammus(52.0,42.0,12,535);
 	cout << "voima x: " <<ammus->getVoima_x() <<endl;
 	cout << "voima y: " <<ammus->getVoima_y() <<endl;
@@ -27,6 +27,14 @@ int main(int argc, char* argv[])
 	
 	ammus->nextY(10);
 	cout << "pos y 2: " <<ammus->getPos_y() <<endl;
+	*/
+	 Ammus *ammus= new Ammus(10,52.0,42.0,120,222);
+	 Ammus *ammus2= new Ammus(10,52.0,42.0,111,217);
+	 if(ammus->collides(ammus2))
+	 {
+		 cout<<"TORMAYS JUMANKEKKANA\n";
+	 }
+
 	cin.get();
 
 	return 0;

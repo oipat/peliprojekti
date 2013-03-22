@@ -1,0 +1,8 @@
+voima x: 52
+voima y: 42
+pos x: 12
+pos x 2: 17
+ppos x: 12
+pos y: 535
+voima y: 41.02
+pos y 2: 534
