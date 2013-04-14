@@ -12,16 +12,20 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Ammus.cpp" />
+    <ClCompile Include="src\Mainloop.cpp" />
     <ClCompile Include="src\Piirto.cpp" />
     <ClCompile Include="src\stdafx.cpp" />
     <ClCompile Include="src\Testaus.cpp" />
+    <ClCompile Include="src\Tykki.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Piirto.h" />
     <ClInclude Include="src\Ammus.h" />
+    <ClInclude Include="src\Mainloop.h" />
     <ClInclude Include="src\stdafx.h" />
     <ClInclude Include="src\Testaus.h" />
+    <ClInclude Include="src\Tykki.h" />
     <ClInclude Include="src\World.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

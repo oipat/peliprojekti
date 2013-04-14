@@ -14,6 +14,8 @@ public:
 	Ammus(double koko,double voima_x,double voima_y,int x,int y);
 	Ammus();
 	~Ammus(void);
+	void setKoko(double k) { koko=k;}
+	double getKoko() const {return koko;}
 	void setVoima_x(double v) {voima_x=v;}
 	void setVoima_y(double v) {voima_y=v;}
 	void setVoima_g(double v) {voima_g=v;}
