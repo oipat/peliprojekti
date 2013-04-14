@@ -10,20 +10,6 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Ammus.h" />
-    <ClInclude Include="Gui.h" />
-    <ClInclude Include="stdafx.h" />
-    <ClInclude Include="Testaus.h" />
-    <ClInclude Include="World.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="Ammus.cpp" />
-    <ClCompile Include="Gui.cpp" />
-    <ClCompile Include="stdafx.cpp" />
-    <ClCompile Include="Testaus.cpp" />
-    <ClCompile Include="World.cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{80CF40BB-DD55-4BB6-B09E-18DC833EAFC2}</ProjectGuid>
     <RootNamespace>Tykkipeli</RootNamespace>
