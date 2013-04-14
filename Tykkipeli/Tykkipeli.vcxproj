@@ -11,16 +11,18 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Ammus.cpp" />
-    <ClCompile Include="src\stdafx.cpp" />
-    <ClCompile Include="src\Testaus.cpp" />
-    <ClCompile Include="src\World.cpp" />
+    <ClInclude Include="Ammus.h" />
+    <ClInclude Include="Gui.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Testaus.h" />
+    <ClInclude Include="World.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Ammus.h" />
-    <ClInclude Include="src\stdafx.h" />
-    <ClInclude Include="src\Testaus.h" />
-    <ClInclude Include="src\World.h" />
+    <ClCompile Include="Ammus.cpp" />
+    <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Testaus.cpp" />
+    <ClCompile Include="World.cpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{80CF40BB-DD55-4BB6-B09E-18DC833EAFC2}</ProjectGuid>
@@ -51,8 +53,8 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>lib\SDL-1.2.15\include\;$(IncludePath)</IncludePath>
-    <LibraryPath>lib\SDL-1.2.15\lib\x86\;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);</LibraryPath>
+    <IncludePath>lib\SDL-1.2.15\include\;lib\SDL_gfx\include;$(IncludePath)</IncludePath>
+    <LibraryPath>lib\SDL-1.2.15\lib\x86\;$(VCInstallDir)lib;$(VCInstallDir)atlmfc\lib;$(WindowsSDK_LibraryPath_x86);lib\SDL_gfx\lib\</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -62,8 +64,8 @@
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>SDL.lib;SDLmain.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <SubSystem>Console</SubSystem>
+      <AdditionalDependencies>SDL.lib;SDLmain.lib;sdlgfx.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <SubSystem>Windows</SubSystem>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
