@@ -4,7 +4,6 @@ using namespace std;
 
 Ammus::Ammus(double koko,double voima_x,double voima_y,int x,int y)
 {
-	
 	this->voima_g=-98,1;
 	this->koko=koko;
 	this->voima_x=voima_x;

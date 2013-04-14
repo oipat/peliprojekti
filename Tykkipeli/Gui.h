@@ -14,7 +14,7 @@ public:
 	void drawTykki(Tykki *tykki);
 	void drawAmmus(Ammus *ammus);
 	void drawMaasto();
-	void drawFrame(int deltaTime);
+	void drawFrame();
 private:
 	int x, y;
 	SDL_Surface* screen;

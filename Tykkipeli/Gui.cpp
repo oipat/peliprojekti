@@ -16,6 +16,7 @@ void Gui::init(int x, int y, int colors) {
 	this->y = y;
 
 	SDL_Init(SDL_INIT_EVERYTHING);
+	//SDL_ShowCursor(0);
 	this->screen = SDL_SetVideoMode(x, y, colors, SDL_HWSURFACE | SDL_DOUBLEBUF);
 	SDL_WM_SetCaption("Tykkipeli 0.1", 0 );
 }
@@ -27,7 +28,7 @@ void Gui::drawTykki(Tykki *tykki) {
 void Gui::drawAmmus(Ammus *ammus) {
 			filledEllipseRGBA(this->screen,
                 ammus->getPos_x(), ammus->getPos_y(),
-                ammus->getKoko(), ammus->getKoko(),
+               (Sint16) ammus->getKoko()/2, (Sint16) ammus->getKoko()/2,
                 255, 0, 0, 255);
 }
 
@@ -35,7 +36,7 @@ void Gui::drawMaasto() {
 
 }
 
-void Gui::drawFrame(int deltaTime) {
+void Gui::drawFrame() {
 	drawMaasto();
 
 	for each (Ammus *ammus in this->world->getAmmukset())
