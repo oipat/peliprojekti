@@ -11,13 +11,14 @@ int main(int argc, char* argv[])
 	bool quit = false;
 	SDL_Event event;
 	
-	World world = World();
+	World world = World(1024, 768);
 	Ammus* ammus1 = new Ammus(10,52.0,42.0,120,222);
 	world.luoAmmus(ammus1);
 	world.luoAmmus(new Ammus(10,52.0,42.0,111,217));
+	world.luoTykki(new Tykki(100,1,300,600,30,30));
 
 	Gui gui = Gui(&world);
-	gui.init(1024, 768, 32);
+	gui.init(world.getKokoX(), world.getKokoX(), 32);
 
 
 	oldTime = SDL_GetTicks();
@@ -43,6 +44,7 @@ int main(int argc, char* argv[])
 				}
 			}
 		}
+
 
 		// testausta vain "jee hiiri liikkuu"
 		int x,y;

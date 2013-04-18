@@ -3,23 +3,40 @@
 #include <iostream>
 
 
-World::World(void)
+World::World(int kokoX, int kokoY)
 {
 	// alustetaan vektorik, sisältää Ammus-olioiden pointereita
 	this->ammukset = std::vector<Ammus*>();
+	this->tykit = std::vector<Tykki*>();
+	this->kokoX = kokoX;
+	this->kokoY = kokoY;
 }
 
 
 World::~World(void)
 {
 }
+int World::getKokoX() {
+	return this->kokoX;
+}
+int World::getKokoY() {
+	return this->kokoY;
+}
 
 std::vector<Ammus*> World::getAmmukset() {
 	return this->ammukset;
 }
 
+std::vector<Tykki*> World::getTykit() {
+	return this->tykit;
+}
+
 void World::luoAmmus(Ammus *uusiAmmus) {
 	this->ammukset.push_back(uusiAmmus);
+}
+
+void World::luoTykki(Tykki *uusiTykki) {
+	this->tykit.push_back(uusiTykki);
 }
 
 void World::destroyAmmus(Ammus *tuhottavaAmmus) {

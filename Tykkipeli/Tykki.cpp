@@ -26,3 +26,16 @@ Tykki::Tykki()
 Tykki::~Tykki(void)
 {
 }
+
+int Tykki::getPosX() {
+	return this->pos_x;
+}
+int Tykki::getPosY() {
+	return this->pos_y;
+}
+int Tykki::getKorkeus() {
+	return this->korkeus;
+}
+int Tykki::getLeveys() {
+	return this->leveys;
+}

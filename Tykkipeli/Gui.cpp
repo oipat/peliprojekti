@@ -23,17 +23,48 @@ void Gui::init(int x, int y, int colors) {
 
 
 void Gui::drawTykki(Tykki *tykki) {
+
+	// tykki-polygonin x-koordinaatit Tykin koordinaatit määrittävät sen vasemman alakulman
+	Sint16 argX[4] = {(Sint16) tykki->getPosX(),
+		(Sint16)(tykki->getPosX()+tykki->getLeveys()/3),
+		(Sint16)(tykki->getPosX()+(tykki->getLeveys()/3*2)),
+		(Sint16) tykki->getPosX()+tykki->getLeveys()};
+
+	// tykki-polygonin y-koordinaatit 
+	Sint16 argY[4] = { (Sint16)tykki->getPosY(),
+		(Sint16)tykki->getPosY() - tykki->getKorkeus(),
+		(Sint16)tykki->getPosY() - tykki->getKorkeus(),
+		(Sint16)tykki->getPosY()};
+
+	filledPolygonRGBA(this->screen, argX, argY, 4,
+                      0, 255, 0, 255);
 }
 
 void Gui::drawAmmus(Ammus *ammus) {
-			filledEllipseRGBA(this->screen,
-                ammus->getPos_x(), ammus->getPos_y(),
-               (Sint16) ammus->getKoko()/2, (Sint16) ammus->getKoko()/2,
-                255, 0, 0, 255);
+		filledEllipseRGBA(this->screen,
+			ammus->getPos_x(), ammus->getPos_y(),
+			// jaetaan kahdella koska ilmeisesti koko = halkaisija ja parametrit haluavat säteen
+			(Sint16) ammus->getKoko()/2,
+			(Sint16) ammus->getKoko()/2,
+			255, 0, 0, 255);
 }
 
 void Gui::drawMaasto() {
+	
+	// testimaasto
+	Sint16 kuudesOsa = (Sint16)world->getKokoX()/6;
+	Sint16 viidesOsa = (Sint16)world->getKokoY()/5;
+	Sint16 kokoX = world->getKokoX();
+	Sint16 kokoY = world->getKokoY();
 
+	Sint16 argX[7] = {kuudesOsa*0, kuudesOsa*1, kuudesOsa*2, kuudesOsa*3, kuudesOsa*4, kuudesOsa*5, kuudesOsa*6};
+	Sint16 argY[7] = {kokoY - viidesOsa*0, kokoY - viidesOsa*1, kokoY - viidesOsa*1, kokoY - viidesOsa*3, kokoY - viidesOsa*1, kokoY - viidesOsa*1, kokoY - viidesOsa*0};
+
+
+	filledPolygonRGBA(this->screen,
+                     argX, argY,
+                      7,
+                      0, 0, 255, 255);
 }
 
 void Gui::drawFrame() {
@@ -42,6 +73,11 @@ void Gui::drawFrame() {
 	for each (Ammus *ammus in this->world->getAmmukset())
 	{
 		drawAmmus(ammus);
+	}
+	
+	for each (Tykki *tykki in this->world->getTykit())
+	{
+		drawTykki(tykki);
 	}
 
 	SDL_Flip(this->screen);

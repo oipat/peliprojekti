@@ -15,5 +15,9 @@ public:
 	~Tykki(void);
 	Tykki(double h,double r,int x,int y,int k,int l);
 	bool collides(Ammus *a);
+	int getPosX();
+	int getPosY();
+	int getKorkeus();
+	int getLeveys();
 
 };
