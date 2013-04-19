@@ -61,8 +61,9 @@ int main(int argc, char* argv[])
 		nTime = SDL_GetTicks();
 		dTime = nTime - oTime;
 		oTime = nTime;
-			ammus2->nextX(deltaTime);
-			ammus2->nextY(deltaTime);
+
+
+			world.update(dTime);
 			SDL_Delay(10);
 			//sleep(10);
 		

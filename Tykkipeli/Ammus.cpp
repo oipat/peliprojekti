@@ -37,8 +37,8 @@ void Ammus::nextY(int time)
 
 bool Ammus::collides(Ammus *other)
 {
-	cout<<"Thissin tiedot:"<<this->pos_x<<": "<<this->pos_y<<"\n";
-	cout<<"other tiedot: "<<other->pos_x<<": "<<other->pos_y<<"\n";
+	//cout<<"Thissin tiedot:"<<this->pos_x<<": "<<this->pos_y<<"\n";
+	//cout<<"other tiedot: "<<other->pos_x<<": "<<other->pos_y<<"\n";
 if(this != other)
 {
 	return !((this->pos_x+this->koko<=other->pos_x)||(this->pos_x>=other->pos_x+other->koko)||(this->pos_y+this->koko<=other->pos_y)||(this->pos_y>=other->pos_y+this->koko));

@@ -13,8 +13,10 @@ public:
 	std::vector<Ammus*> getAmmukset();
 	std::vector<Tykki*> getTykit();
 	void destroyAmmus(Ammus*);
+	void destroyTykki(Tykki*);
 	void luoAmmus(Ammus*);
 	void luoTykki(Tykki*);
+	void update(int time);
 	void World::tulostaAmmukset();
 	int getKokoX();
 	int getKokoY();

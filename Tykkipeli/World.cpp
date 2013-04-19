@@ -40,6 +40,7 @@ void World::luoTykki(Tykki *uusiTykki) {
 }
 
 void World::destroyAmmus(Ammus *tuhottavaAmmus) {
+			
 	std::vector<Ammus*>::iterator iter;
 	
 	// testattu
@@ -51,9 +52,48 @@ void World::destroyAmmus(Ammus *tuhottavaAmmus) {
 			iter = ammukset.erase(iter);
 			// tuhotaan myös itse olio
 			delete tuhottavaAmmus;
+			break;
 		}
 	}
 }
+void World::destroyTykki(Tykki *tuhottavaTykki) {
+	
+	for each (Tykki *tykki in tykit)
+	{
+			if(tuhottavaTykki == tykki) {
+			// tuhotaan olio
+			delete tuhottavaTykki;
+		}
+	}
+			
+}
+
+void World::update(int time)
+{
+	for each (Ammus *ammus in ammukset)
+	{
+		ammus->nextX(time);
+		ammus->nextY(time);
+	for each (Ammus *other in ammukset)
+	{
+		if(ammus->collides(other))
+		{
+			destroyAmmus(ammus);
+			destroyAmmus(other);
+		}
+	}
+	for each (Tykki *tykki in tykit)
+	{
+		if(tykki->collides(ammus))
+		{
+			destroyTykki(tykki);
+			destroyAmmus(ammus);
+		}
+	}
+	}
+	
+}
+
 
 void World::tulostaAmmukset() {
 	std::vector<Ammus*>::iterator iter;

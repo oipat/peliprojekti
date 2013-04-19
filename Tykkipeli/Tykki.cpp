@@ -12,13 +12,13 @@ Tykki::Tykki(double health,double Aika,int x,int y,int leveys,int korkeus)
 	this->leveys=leveys;
 	this->korkeus=korkeus;
 }
-/*
+
 bool Tykki::collides(Ammus *ammus)
 {
-	return !((this->pos_x+this->leveys<=ammus->getPos_x)||(this->pos_x>=ammus->getPos_x+ammus->getKoko)||(this->pos_y+this->korkeus<=ammus->getPos_y)||(this->pos_y>=ammus->getPos_y+this->korkeus));
+	return !((this->pos_x+this->leveys<=ammus->getPos_x())||(this->pos_x>=ammus->getPos_x()+ammus->getKoko())||(this->pos_y+this->korkeus<=ammus->getPos_y())||(this->pos_y>=ammus->getPos_y()+this->korkeus));
 
 }
-*/
+
 Tykki::Tykki()
 {
 }
