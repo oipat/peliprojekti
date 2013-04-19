@@ -20,16 +20,19 @@ Ammus::Ammus() {
 Ammus::~Ammus(void) {
 }
 
-void Ammus::nextX(long time)
+void Ammus::nextX(int time)
 {
-	this->pos_x=(int)(ppos_x+voima_x*time/1000);
+	int apumuuttuja=this->pos_x;
+	this->pos_x=(int)(ppos_x+(voima_x*time/100));
+	this->ppos_x=apumuuttuja;
 }
 
-void Ammus::nextY(long time)
+void Ammus::nextY(int time)
 {
+	int apumuuttuja=this->pos_y;
 	voima_y=voima_y+(voima_g*time/1000);
-	cout <<"voima y: "<< voima_y <<endl;
-	this->pos_y=(int)(ppos_y+(voima_y*time/1000*-1));
+	this->pos_y=(int)(ppos_y+(voima_y*time/100*-1));
+	this->ppos_y=apumuuttuja;
 }
 
 bool Ammus::collides(Ammus *other)

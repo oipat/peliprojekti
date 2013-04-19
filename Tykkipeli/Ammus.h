@@ -26,8 +26,8 @@ public:
 	int getPos_y() const {return pos_y;}
 	int getPPos_x() const {return ppos_x;}
 	int getPPos_y() const {return ppos_y;}
-	void nextX(long time);
-	void nextY(long time);
+	void nextX(int time);
+	void nextY(int time);
 	void stop();
 	bool collides(Ammus *other);
 	

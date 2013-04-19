@@ -7,7 +7,7 @@ using namespace std;
 
 int main(int argc, char* argv[])
 {
-	int oldTime, newTime, deltaTime;
+	int oldTime, newTime, deltaTime,oTime,nTime,dTime;
 	bool quit = false;
 	SDL_Event event;
 	
@@ -18,11 +18,13 @@ int main(int argc, char* argv[])
 	world.luoTykki(new Tykki(100,1,300,600,30,30));
 
 	Gui gui = Gui(&world);
-	gui.init(world.getKokoX(), world.getKokoX(), 32);
+	gui.init(world.getKokoX(), world.getKokoY(), 32);
 
 
 	oldTime = SDL_GetTicks();
-
+	Ammus* ammus2=new Ammus(10,90.0,80.0,300,600);
+	world.luoAmmus(ammus2);
+	oTime=SDL_GetTicks();
 	while(!quit) {
 		newTime = SDL_GetTicks();
 		deltaTime = newTime - oldTime;
@@ -45,13 +47,28 @@ int main(int argc, char* argv[])
 			}
 		}
 
-
+		
 		// testausta vain "jee hiiri liikkuu"
 		int x,y;
 		SDL_GetMouseState(&x, &y);
 		gui.drawAmmus(&Ammus(10, 10, 10, x, y));
 
-		gui.drawFrame();
+		gui.drawFrame();		
+		
+		
+		
+		
+		nTime = SDL_GetTicks();
+		dTime = nTime - oTime;
+		oTime = nTime;
+			ammus2->nextX(deltaTime);
+			ammus2->nextY(deltaTime);
+			SDL_Delay(10);
+			//sleep(10);
+		
+		
+		
+		
 	}
 
 	SDL_Quit();
