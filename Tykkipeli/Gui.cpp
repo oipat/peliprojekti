@@ -42,7 +42,7 @@ void Gui::drawTykki(Tykki *tykki) {
 
 void Gui::drawAmmus(Ammus *ammus) {
 		filledEllipseRGBA(this->screen,
-			ammus->getPos_x(), ammus->getPos_y(),
+			(Sint16) ammus->getPos_x(), (Sint16) ammus->getPos_y(),
 			// jaetaan kahdella koska ilmeisesti koko = halkaisija ja parametrit haluavat säteen
 			(Sint16) ammus->getKoko()/2,
 			(Sint16) ammus->getKoko()/2,

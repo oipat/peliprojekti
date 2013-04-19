@@ -13,6 +13,7 @@
   <ItemGroup>
     <ClInclude Include="Ammus.h" />
     <ClInclude Include="Gui.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="Mainloop.h" />
     <ClInclude Include="Piirto.h" />
     <ClInclude Include="stdafx.h" />
@@ -23,6 +24,7 @@
   <ItemGroup>
     <ClCompile Include="Ammus.cpp" />
     <ClCompile Include="Gui.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="Mainloop.cpp" />
     <ClCompile Include="Piirto.cpp" />
     <ClCompile Include="stdafx.cpp" />

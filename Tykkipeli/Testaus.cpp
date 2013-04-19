@@ -1,7 +1,6 @@
 #include "stdafx.h"
 #include "Ammus.h"
 #include "Testaus.h"
-#include "SDL.h"
 using namespace std;
 
 
@@ -9,7 +8,6 @@ int main(int argc, char* argv[])
 {
 	int oldTime, newTime, deltaTime,oTime,nTime,dTime;
 	bool quit = false;
-	SDL_Event event;
 	
 	World world = World(1024, 768);
 	Ammus* ammus1 = new Ammus(10,52.0,42.0,120,222);
@@ -20,6 +18,7 @@ int main(int argc, char* argv[])
 	Gui gui = Gui(&world);
 	gui.init(world.getKokoX(), world.getKokoY(), 32);
 
+	InputHandler inputHandler = InputHandler();
 
 	oldTime = SDL_GetTicks();
 	Ammus* ammus2=new Ammus(10,90.0,80.0,300,600);
@@ -30,28 +29,14 @@ int main(int argc, char* argv[])
 		deltaTime = newTime - oldTime;
 		oldTime = newTime;
 
-		// inputhandlaus, vois ehkä laittaa toisee luokkaa
-		if(SDL_PollEvent(&event)) {
-			if (event.type == SDL_QUIT) {
-				quit = true;
-			}
-			if (event.type == SDL_KEYDOWN)
-			{
-				SDLKey keyPressed = event.key.keysym.sym;
-				switch (keyPressed)
-				{
-					case SDLK_ESCAPE:
-					quit = true;
-					break;
-				}
-			}
+		// inputhandlaus
+		inputHandler.handleInput();
+		if(inputHandler.isQuit()) {
+			quit = true;
 		}
-
 		
 		// testausta vain "jee hiiri liikkuu"
-		int x,y;
-		SDL_GetMouseState(&x, &y);
-		gui.drawAmmus(&Ammus(10, 10, 10, x, y));
+		gui.drawAmmus(&Ammus(10, 10, 10, inputHandler.getMouseX(), inputHandler.getMouseY()));
 
 		gui.drawFrame();		
 		
