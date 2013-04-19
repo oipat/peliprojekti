@@ -3,7 +3,7 @@
 using namespace std;
 
 
-Tykki::Tykki(double health,double Aika,int x,int y,int leveys,int korkeus)
+Tykki::Tykki(double health,double Aika,int x,int y,int korkeus,int leveys,bool human)
 {
 	this->health=health;
 	this->reloadAika=Aika;
@@ -11,6 +11,7 @@ Tykki::Tykki(double health,double Aika,int x,int y,int leveys,int korkeus)
 	this->pos_y=y;
 	this->leveys=leveys;
 	this->korkeus=korkeus;
+	this->human=human;
 }
 
 bool Tykki::collides(Ammus *ammus)

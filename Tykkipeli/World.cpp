@@ -63,10 +63,12 @@ void World::destroyTykki(Tykki *tuhottavaTykki) {
 			if(tuhottavaTykki == tykki) {
 			// tuhotaan olio
 			delete tuhottavaTykki;
+			break;
 		}
 	}
 			
 }
+
 
 void World::update(int time)
 {

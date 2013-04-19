@@ -17,6 +17,7 @@
     <ClInclude Include="Mainloop.h" />
     <ClInclude Include="Piirto.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="Tekoaly.h" />
     <ClInclude Include="Testaus.h" />
     <ClInclude Include="Tykki.h" />
     <ClInclude Include="World.h" />
@@ -28,6 +29,7 @@
     <ClCompile Include="Mainloop.cpp" />
     <ClCompile Include="Piirto.cpp" />
     <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="Tekoaly.cpp" />
     <ClCompile Include="Testaus.cpp" />
     <ClCompile Include="Tykki.cpp" />
     <ClCompile Include="World.cpp" />
