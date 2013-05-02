@@ -47,6 +47,7 @@ void World::destroyAmmus(Ammus *tuhottavaAmmus) {
 	
 	// testattu
 	// iteroi ammuslista
+	if(ammukset.size()>0){
 	for(iter = ammukset.begin(); iter != ammukset.end(); iter++) {
 		// jos tuhottavan ammuksen muistiosoite t‰sm‰‰ vektorissa olevaan
 		if(tuhottavaAmmus == *iter) {
@@ -56,7 +57,7 @@ void World::destroyAmmus(Ammus *tuhottavaAmmus) {
 			delete tuhottavaAmmus;
 			break;
 		}
-	}
+	}}
 }
 void World::destroyTykki(Tykki *tuhottavaTykki) {
 	
@@ -86,7 +87,8 @@ void World::update(int time)
 		{
 			destroyAmmus(ammus);
 			destroyAmmus(other);
-			break;
+			goto escape;
+			//break;
 		}
 	}
 	for each (Tykki *tykki in tykit)
@@ -98,14 +100,16 @@ void World::update(int time)
 			{
 				pelaajavoitti=true;
 			}
-			destroyTykki(tykki);
-			destroyAmmus(ammus);
-			
-			break;
+			//destroyTykki(tykki);
+			//destroyAmmus(ammus);
+			goto escape;
+			//break;
 		}
 	}
 	}
 	}
+escape:
+	std::cout <<"escape the loop";
 }
 
 

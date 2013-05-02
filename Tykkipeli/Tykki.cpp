@@ -28,18 +28,27 @@ Tykki::~Tykki(void)
 {
 }
 
-int Tykki::getPosX() {
+int Tykki::getPosX() 
+{
 	return this->pos_x;
 }
-int Tykki::getPosY() {
+int Tykki::getPosY() 
+{
 	return this->pos_y;
 }
-int Tykki::getKorkeus() {
+int Tykki::getKorkeus() 
+{
 	return this->korkeus;
 }
-int Tykki::getLeveys() {
+int Tykki::getLeveys() 
+{
 	return this->leveys;
 }
-bool Tykki::getHuman(){
+bool Tykki::getHuman()
+{
 	return this->human;
+}
+double Tykki::getReloadAika()
+{
+	return this->reloadAika;
 }

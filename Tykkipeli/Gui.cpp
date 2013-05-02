@@ -18,7 +18,7 @@ void Gui::init(int x, int y, int colors) {
 	SDL_Init(SDL_INIT_EVERYTHING);
 	//SDL_ShowCursor(0);
 	this->screen = SDL_SetVideoMode(x, y, colors, SDL_HWSURFACE | SDL_DOUBLEBUF);
-	SDL_WM_SetCaption("Tykkipeli 0.1.3", 0 );
+	SDL_WM_SetCaption("Tykkipeli 0.1.8", 0 );
 }
 
 

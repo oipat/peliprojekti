@@ -20,5 +20,6 @@ public:
 	int getPosY();
 	int getKorkeus();
 	int getLeveys();
+	double getReloadAika();
 	bool getHuman();
 };

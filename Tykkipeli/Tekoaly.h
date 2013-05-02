@@ -5,8 +5,9 @@ class Tekoaly
 {
 
 private:
-	int taso,ammuskoko,voima_x,voima_y,x,y;
+	int taso,ammuskoko,x,y,ammuttu;
 
+	double power,voima_x,voima_y;
 public:
 	void Pelaa(World* world);
 	Tekoaly(int taso);

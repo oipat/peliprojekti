@@ -41,14 +41,12 @@ bool Ammus::collides(Ammus *other)
 	//cout<<"other tiedot: "<<other->pos_x<<": "<<other->pos_y<<"\n";
 if(this != other)
 {
-	return !((this->pos_x+this->koko<=other->pos_x)||(this->pos_x>=other->pos_x+other->koko)||(this->pos_y+this->koko<=other->pos_y)||(this->pos_y>=other->pos_y+this->koko));
-	
+	return !((this->pos_x+this->koko<=other->pos_x)||(this->pos_x>=other->pos_x+other->koko)||(this->pos_y+this->koko<=other->pos_y)||(this->pos_y>=other->pos_y+this->koko));	
 }
 else
 {
 return false;
 }
-
 
 }
 
