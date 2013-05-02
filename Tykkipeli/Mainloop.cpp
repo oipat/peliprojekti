@@ -7,13 +7,15 @@ int main(int argc, char* argv[])
 	int deltaTime=0,aiTime=0,oTime,nTime,dTime;
 	bool quit = false;
 
+
+	// Maaston polygonin pisteet
 	Maasto maasto = Maasto();
-	maasto.lisaaPiste(new Piste(100, 600));
+	maasto.lisaaPiste(new Piste(100, 610));
 	maasto.lisaaPiste(new Piste(330, 600));
-	maasto.lisaaPiste(new Piste(450, 333));
-	maasto.lisaaPiste(new Piste(580, 333));
+	maasto.lisaaPiste(new Piste(500, 313));
+	maasto.lisaaPiste(new Piste(530, 283));
 	maasto.lisaaPiste(new Piste(700, 600));
-	maasto.lisaaPiste(new Piste(900, 600));
+	maasto.lisaaPiste(new Piste(900, 610));
 	maasto.lisaaPiste(new Piste(900, 768));
 	maasto.lisaaPiste(new Piste(100, 768));
 

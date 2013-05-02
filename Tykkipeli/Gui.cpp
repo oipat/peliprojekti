@@ -76,6 +76,8 @@ void Gui::drawMaasto(Maasto *maasto) {
                      argX, argY,
                       taulukko,
                       0, 0, 255, 255);
+	delete [] argX;
+	delete [] argY;
 }
 
 void Gui::drawFrame() {

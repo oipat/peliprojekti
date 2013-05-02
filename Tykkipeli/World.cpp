@@ -49,7 +49,7 @@ void World::luoTykki(Tykki *uusiTykki) {
 void World::destroyAmmus(Ammus *tuhottavaAmmus) {
 			
 	std::vector<Ammus*>::iterator iter;
-	
+	tuhottavaAmmus->stop();
 	// testattu
 	// iteroi ammuslista
 	if(ammukset.size()>0){
@@ -86,6 +86,16 @@ void World::update(int time)
 	{
 		ammus->nextX(time);
 		ammus->nextY(time);
+
+		if(ammus->getPos_x() > this->kokoX || ammus->getPos_x() < 0) {
+			destroyAmmus(ammus);
+			continue;
+		}
+		if(ammus->getPos_y() > this->kokoY) {
+			destroyAmmus(ammus);
+			continue;
+		}
+
 		if(ammus->maastoCollision(this->maasto)) {
 			destroyAmmus(ammus);
 			continue;

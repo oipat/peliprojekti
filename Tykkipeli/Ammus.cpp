@@ -53,7 +53,7 @@ return false;
 
 bool Ammus::maastoCollision(Maasto *maasto) {
 	Piste* prevPiste = NULL;
-	double sade = this->koko/4;
+	double sade = this->koko/2;
 	for each (Piste* piste in maasto->pisteet)
 	{
 		if(prevPiste == NULL) {
@@ -62,15 +62,15 @@ bool Ammus::maastoCollision(Maasto *maasto) {
 		}
 
 		// reuna vasemmasta alanurkasta ylös
-		if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x, this->pos_y), Piste(this->pos_x, this->pos_y-sade))) {
+		if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x-sade, this->pos_y+sade), Piste(this->pos_x-sade, this->pos_y-sade))) {
 			return true;
 		}
 		// reuna vasemmasta ylänurkasta oikealle
-		else if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x, this->pos_y), Piste(this->pos_x+sade, this->pos_y))) {
+		else if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x-sade, this->pos_y-sade), Piste(this->pos_x+sade, this->pos_y-sade))) {
 			return true;
 		}
 		// reuna oikeasta ylänurkasta alas
-		else if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x+sade, this->pos_y), Piste(this->pos_x+sade, this->pos_y+sade))) {
+		else if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x+sade, this->pos_y-sade), Piste(this->pos_x+sade, this->pos_y+sade))) {
 			return true;
 		}
 		// reuna oikeasta alanurkasta vasemmalle
