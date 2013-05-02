@@ -40,3 +40,6 @@ int Tykki::getKorkeus() {
 int Tykki::getLeveys() {
 	return this->leveys;
 }
+bool Tykki::getHuman(){
+	return this->human;
+}

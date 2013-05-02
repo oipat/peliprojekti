@@ -5,10 +5,10 @@ class Tekoaly
 {
 
 private:
-	int taso;
+	int taso,ammuskoko,voima_x,voima_y,x,y;
 
 public:
-	void Pelaa();
+	void Pelaa(World* world);
 	Tekoaly(int taso);
 	Tekoaly(void);
 	virtual ~Tekoaly(void);

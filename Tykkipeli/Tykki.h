@@ -20,5 +20,5 @@ public:
 	int getPosY();
 	int getKorkeus();
 	int getLeveys();
-
+	bool getHuman();
 };

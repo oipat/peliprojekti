@@ -3,7 +3,7 @@
 #include "Testaus.h"
 using namespace std;
 
-
+/*
 int main(int argc, char* argv[])
 {
 	int oldTime, newTime, deltaTime,oTime,nTime,dTime;
@@ -66,4 +66,4 @@ int main(int argc, char* argv[])
 	return 0;
 }
 
-
+*/

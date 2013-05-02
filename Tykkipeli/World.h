@@ -20,11 +20,16 @@ public:
 	void World::tulostaAmmukset();
 	int getKokoX();
 	int getKokoY();
+	bool getLoppu();
+	bool getPelaajavoitti();
+
 private:
 	std::vector<Ammus*> ammukset;
 	std::vector<Tykki*> tykit;
 	// pikseleitä?
 	int kokoX;
 	int kokoY;
+	bool loppu;
+	bool pelaajavoitti;
 };
 

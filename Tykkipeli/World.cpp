@@ -10,6 +10,8 @@ World::World(int kokoX, int kokoY)
 	this->tykit = std::vector<Tykki*>();
 	this->kokoX = kokoX;
 	this->kokoY = kokoY;
+	this->loppu=false;
+	this->pelaajavoitti=false;
 }
 
 
@@ -72,6 +74,8 @@ void World::destroyTykki(Tykki *tuhottavaTykki) {
 
 void World::update(int time)
 {
+	if(ammukset.size()>0){
+
 	for each (Ammus *ammus in ammukset)
 	{
 		ammus->nextX(time);
@@ -82,18 +86,26 @@ void World::update(int time)
 		{
 			destroyAmmus(ammus);
 			destroyAmmus(other);
+			break;
 		}
 	}
 	for each (Tykki *tykki in tykit)
 	{
 		if(tykki->collides(ammus))
 		{
+			loppu=true;
+			if(!tykki->getHuman())
+			{
+				pelaajavoitti=true;
+			}
 			destroyTykki(tykki);
 			destroyAmmus(ammus);
+			
+			break;
 		}
 	}
 	}
-	
+	}
 }
 
 
@@ -105,4 +117,14 @@ void World::tulostaAmmukset() {
 		std::cout << "\ty: " << ((Ammus*) *iter)->getPos_y();
 		std::cout << std::endl;
 	}
+}
+
+bool World::getLoppu()
+{
+	return this->loppu;
+}
+
+bool World::getPelaajavoitti()
+{
+	return this->pelaajavoitti;
 }
