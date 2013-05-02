@@ -89,16 +89,16 @@ void World::update(int time)
 
 		if(ammus->getPos_x() > this->kokoX || ammus->getPos_x() < 0) {
 			destroyAmmus(ammus);
-			continue;
+			goto escape;
 		}
 		if(ammus->getPos_y() > this->kokoY) {
 			destroyAmmus(ammus);
-			continue;
+			goto escape;
 		}
 
 		if(ammus->maastoCollision(this->maasto)) {
 			destroyAmmus(ammus);
-			continue;
+			goto escape;
 		}
 		for each (Ammus *other in ammukset)
 		{

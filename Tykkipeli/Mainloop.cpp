@@ -44,7 +44,7 @@ int main(int argc, char* argv[])
 		}
 		
 		// testausta vain "jee hiiri liikkuu"
-		gui.drawAmmus(&Ammus(10, 10, 10, inputHandler.getMouseX(), inputHandler.getMouseY()));
+		//gui.drawAmmus(&Ammus(10, 10, 10, inputHandler.getMouseX(), inputHandler.getMouseY()));
 
 		gui.drawFrame();		
 		if(aiTime>1500)
@@ -54,7 +54,7 @@ int main(int argc, char* argv[])
 		}
 		if(inputHandler.isMouseClicked()&&deltaTime>(int)(tykki->getReloadAika()*1000))
 		{
-			world.luoAmmus(new Ammus(10,(inputHandler.getMouseX()-tykki->getPosX())/2,(tykki->getPosY()-inputHandler.getMouseY())/2,tykki->getPosX()+10,tykki->getPosY()-50));
+			world.luoAmmus(new Ammus(10,(inputHandler.getMouseX()-tykki->getPosX())/3,(tykki->getPosY()-inputHandler.getMouseY())/3,tykki->getPosX()+10,tykki->getPosY()-50));
 			deltaTime=0;
 		}
 		
