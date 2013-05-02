@@ -14,8 +14,10 @@
     <ClInclude Include="Ammus.h" />
     <ClInclude Include="Gui.h" />
     <ClInclude Include="InputHandler.h" />
+    <ClInclude Include="Maasto.h" />
     <ClInclude Include="Mainloop.h" />
     <ClInclude Include="Piirto.h" />
+    <ClInclude Include="Piste.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Tekoaly.h" />
     <ClInclude Include="Testaus.h" />
@@ -26,8 +28,10 @@
     <ClCompile Include="Ammus.cpp" />
     <ClCompile Include="Gui.cpp" />
     <ClCompile Include="InputHandler.cpp" />
+    <ClCompile Include="Maasto.cpp" />
     <ClCompile Include="Mainloop.cpp" />
     <ClCompile Include="Piirto.cpp" />
+    <ClCompile Include="Piste.cpp" />
     <ClCompile Include="stdafx.cpp" />
     <ClCompile Include="Tekoaly.cpp" />
     <ClCompile Include="Testaus.cpp" />

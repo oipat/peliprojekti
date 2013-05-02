@@ -50,6 +50,58 @@ return false;
 
 }
 
+
+bool Ammus::maastoCollision(Maasto *maasto) {
+	Piste* prevPiste = NULL;
+	double sade = this->koko/2;
+	for each (Piste* piste in maasto->pisteet)
+	{
+		if(prevPiste == NULL) {
+			prevPiste = piste;
+			continue;
+		}
+
+		// reuna vasemmasta alanurkasta ylös
+		if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x, this->pos_y), Piste(this->pos_x, this->pos_y-sade))) {
+			return true;
+		}
+		// reuna vasemmasta ylänurkasta oikealle
+		else if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x, this->pos_y), Piste(this->pos_x+sade, this->pos_y))) {
+			return true;
+		}
+		// reuna oikeasta ylänurkasta alas
+		else if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x+sade, this->pos_y), Piste(this->pos_x+sade, this->pos_y+sade))) {
+			return true;
+		}
+		// reuna oikeasta alanurkasta vasemmalle
+		else if(edgeIntersection(*prevPiste, *piste, Piste(this->pos_x+sade, this->pos_y+sade), Piste(this->pos_x-sade, this->pos_y+sade))) {
+			return true;
+		}
+		prevPiste = piste;
+	}
+	return false;
+}
+
+// <copypaste> lähde: http://content.gpwiki.org/index.php/Polygon_Collision
+
+double Ammus::determinant(Piste vec1, Piste vec2){
+     return vec1.x * vec2.y - vec1.y * vec2.x;
+ }
+ 
+ //one edge is a-b, the other is c-d
+ bool Ammus::edgeIntersection(Piste a, Piste b, Piste c, Piste d){
+     double det = determinant(b - a, c - d);
+     double t   = determinant(c - a, c - d) / det;
+     double u   = determinant(b - a, c - a) / det;
+     if ((t < 0) || (u < 0) || (t > 1) || (u > 1)) {
+         return false;
+     } else {
+         return true;
+     }
+ }
+
+ // </copypaste>
+
 void Ammus::stop()
 {
 	voima_g=0;

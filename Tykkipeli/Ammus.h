@@ -1,4 +1,5 @@
 #pragma once
+#include "Maasto.h"
 
 class Ammus
 {
@@ -30,6 +31,9 @@ public:
 	void nextY(int time);
 	void stop();
 	bool collides(Ammus *other);
+	bool maastoCollision(Maasto *maasto);
+	double determinant(Piste vec1, Piste vec2);
+	bool edgeIntersection(Piste a, Piste b, Piste c, Piste d);
 	
 	
 	

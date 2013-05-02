@@ -3,7 +3,7 @@
 #include <iostream>
 
 
-World::World(int kokoX, int kokoY)
+World::World(int kokoX, int kokoY, Maasto* maasto)
 {
 	// alustetaan vektorik, sisältää Ammus-olioiden pointereita
 	this->ammukset = std::vector<Ammus*>();
@@ -12,6 +12,7 @@ World::World(int kokoX, int kokoY)
 	this->kokoY = kokoY;
 	this->loppu=false;
 	this->pelaajavoitti=false;
+	this->maasto = maasto;
 }
 
 
@@ -31,6 +32,10 @@ std::vector<Ammus*> World::getAmmukset() {
 
 std::vector<Tykki*> World::getTykit() {
 	return this->tykit;
+}
+
+Maasto* World::getMaasto() {
+	return this->maasto;
 }
 
 void World::luoAmmus(Ammus *uusiAmmus) {
@@ -81,31 +86,35 @@ void World::update(int time)
 	{
 		ammus->nextX(time);
 		ammus->nextY(time);
-	for each (Ammus *other in ammukset)
-	{
-		if(ammus->collides(other))
-		{
+		if(ammus->maastoCollision(this->maasto)) {
 			destroyAmmus(ammus);
-			destroyAmmus(other);
-			goto escape;
-			//break;
+			continue;
 		}
-	}
-	for each (Tykki *tykki in tykit)
-	{
-		if(tykki->collides(ammus))
+		for each (Ammus *other in ammukset)
 		{
-			loppu=true;
-			if(!tykki->getHuman())
+			if(ammus->collides(other))
 			{
-				pelaajavoitti=true;
+				destroyAmmus(ammus);
+				destroyAmmus(other);
+				goto escape;
+				//break;
 			}
-			//destroyTykki(tykki);
-			//destroyAmmus(ammus);
-			goto escape;
-			//break;
 		}
-	}
+		for each (Tykki *tykki in tykit)
+		{
+			if(tykki->collides(ammus))
+			{
+				loppu=true;
+				if(!tykki->getHuman())
+				{
+					pelaajavoitti=true;
+				}
+				//destroyTykki(tykki);
+				//destroyAmmus(ammus);
+				goto escape;
+				//break;
+			}
+		}
 	}
 	}
 escape:

@@ -6,8 +6,19 @@ int main(int argc, char* argv[])
 {
 	int deltaTime=0,aiTime=0,oTime,nTime,dTime;
 	bool quit = false;
-	
-	World world = World(1024, 768);
+
+	Maasto maasto = Maasto();
+	maasto.lisaaPiste(new Piste(100, 600));
+	maasto.lisaaPiste(new Piste(330, 600));
+	maasto.lisaaPiste(new Piste(450, 333));
+	maasto.lisaaPiste(new Piste(580, 333));
+	maasto.lisaaPiste(new Piste(700, 600));
+	maasto.lisaaPiste(new Piste(900, 600));
+	maasto.lisaaPiste(new Piste(900, 768));
+	maasto.lisaaPiste(new Piste(100, 768));
+
+
+	World world = World(1024, 768, &maasto);
 	Tykki* tykki=new Tykki(100,1,300,600,30,30,true);
 	world.luoTykki(tykki);
 	Tykki* tykki2=new Tykki(100,1,700,600,30,30,false);
@@ -16,7 +27,7 @@ int main(int argc, char* argv[])
 	gui.init(world.getKokoX(), world.getKokoY(), 32);
 
 	InputHandler inputHandler = InputHandler();
-	Tekoaly ai= Tekoaly(3);
+	Tekoaly ai= Tekoaly(1);
 	
 	
 		

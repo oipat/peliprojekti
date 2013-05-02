@@ -2,12 +2,13 @@
 #include <vector>
 #include "Ammus.h"
 #include "Tykki.h"
+#include "Maasto.h"
 
 
 class World
 {
 public:
-	World(int kokoY, int kokoX);
+	World(int kokoY, int kokoX, Maasto* maasto);
 	~World(void);
 
 	std::vector<Ammus*> getAmmukset();
@@ -22,10 +23,12 @@ public:
 	int getKokoY();
 	bool getLoppu();
 	bool getPelaajavoitti();
+	Maasto* getMaasto();
 
 private:
 	std::vector<Ammus*> ammukset;
 	std::vector<Tykki*> tykit;
+	Maasto* maasto;
 	// pikseleitä?
 	int kokoX;
 	int kokoY;

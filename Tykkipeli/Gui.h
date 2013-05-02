@@ -3,8 +3,10 @@
 #include "Tykki.h"
 #include "Ammus.h"
 #include "World.h"
+#include "Maasto.h"
 
 #pragma once
+
 class Gui
 {
 public:
@@ -13,7 +15,7 @@ public:
 	void init(int x, int y, int colors);
 	void drawTykki(Tykki *tykki);
 	void drawAmmus(Ammus *ammus);
-	void drawMaasto();
+	void drawMaasto(Maasto *maasto);
 	void drawFrame();
 private:
 	int x, y;

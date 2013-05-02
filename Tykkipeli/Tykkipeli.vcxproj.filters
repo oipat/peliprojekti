@@ -45,6 +45,12 @@
     <ClInclude Include="Tekoaly.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Maasto.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Piste.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Gui.cpp">
@@ -75,6 +81,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tekoaly.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Maasto.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Piste.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -49,26 +49,37 @@ void Gui::drawAmmus(Ammus *ammus) {
 			255, 0, 0, 255);
 }
 
-void Gui::drawMaasto() {
-	
+void Gui::drawMaasto(Maasto *maasto) {
+	int taulukko = maasto->pisteet.size();
+	Sint16* argX = new Sint16[taulukko+1];
+	Sint16* argY = new Sint16[taulukko+1];
+
+	int i = 0;
+	for each (Piste* p in maasto->pisteet)
+	{
+		argX[i] = p->x;
+		argY[i] = p->y;
+		i++;
+	}
+
 	// testimaasto
-	Sint16 kuudesOsa = (Sint16)world->getKokoX()/6;
+	/*Sint16 kuudesOsa = (Sint16)world->getKokoX()/6;
 	Sint16 viidesOsa = (Sint16)world->getKokoY()/5;
 	Sint16 kokoX = world->getKokoX();
 	Sint16 kokoY = world->getKokoY();
 
 	Sint16 argX[7] = {kuudesOsa*0, kuudesOsa*1, kuudesOsa*2, kuudesOsa*3, kuudesOsa*4, kuudesOsa*5, kuudesOsa*6};
-	Sint16 argY[7] = {kokoY - viidesOsa*0, kokoY - viidesOsa*1, kokoY - viidesOsa*1, kokoY - viidesOsa*3, kokoY - viidesOsa*1, kokoY - viidesOsa*1, kokoY - viidesOsa*0};
+	Sint16 argY[7] = {kokoY - viidesOsa*0, kokoY - viidesOsa*1, kokoY - viidesOsa*1, kokoY - viidesOsa*3, kokoY - viidesOsa*1, kokoY - viidesOsa*1, kokoY - viidesOsa*0};*/
 
 
 	filledPolygonRGBA(this->screen,
                      argX, argY,
-                      7,
+                      taulukko,
                       0, 0, 255, 255);
 }
 
 void Gui::drawFrame() {
-	drawMaasto();
+	drawMaasto(world->getMaasto());
 
 	for each (Ammus *ammus in this->world->getAmmukset())
 	{
