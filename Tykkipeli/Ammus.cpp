@@ -53,7 +53,7 @@ return false;
 
 bool Ammus::maastoCollision(Maasto *maasto) {
 	Piste* prevPiste = NULL;
-	double sade = this->koko/2;
+	double sade = this->koko/4;
 	for each (Piste* piste in maasto->pisteet)
 	{
 		if(prevPiste == NULL) {
